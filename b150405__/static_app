@@ -1,0 +1,7 @@
+static_lib:add.c sum.c 
+	gcc -c add.c
+	gcc -c sum.c
+	ar -cru libdemo.a    add.o sum.o
+app_static: libdemo.a
+	gcc  -static  app.c  -L.  -ldemo  -o  app_static
+

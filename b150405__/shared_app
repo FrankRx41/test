@@ -1,0 +1,6 @@
+shared_lib:add.c sum.c 
+	gcc -fPIC -c add.c
+	gcc -fPIC -c sum.c
+	gcc -shared add.o sum.o -o libdemo.so
+app_shared:libdemo.so
+	gcc    app.c  -L.  -ldemo  -o  app_shared
